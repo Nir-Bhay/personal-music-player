@@ -1,0 +1,208 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    margin-top: 20px;
+    font-size: 28px;
+    color: #ff5757;
+}
+
+/* Search Bar */
+#search {
+    width: 80%;
+    padding: 12px;
+    margin: 20px auto;
+    display: block;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    text-align: center;
+    background-color: #222;
+    color: #fff;
+    outline: none;
+}
+
+/* Results List */
+#results {
+    list-style: none;
+    padding: 0;
+}
+
+#results li {
+    padding: 10px;
+    background: #1e1e1e;
+    margin: 8px auto;
+    width: 80%;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#results li:hover {
+    background: #ff5757;
+}
+
+/* Favorites Section */
+#favorites {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+#favorites li {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #ff5757;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+#favorites li:hover {
+    transform: scale(1.1);
+}
+
+/* History Section */
+#history {
+    list-style: none;
+    padding: 0;
+}
+
+#history li {
+    padding: 10px;
+    background: #1e1e1e;
+    margin: 5px auto;
+    width: 80%;
+    border-radius: 8px;
+}
+
+button {
+    background-color: #ff5757;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-bottom: 10px;
+}
+
+button:hover {
+    background-color: #ff3030;
+}
+
+/* Player Styling */
+#player {
+    margin-top: 20px;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    height: 315px;
+    border-radius: 8px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    #player {
+        width: 100%;
+        height: 300px;
+    }
+
+    #results,
+    #favorites,
+    #history {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #favorites li {
+        width: 70px;
+        height: 70px;
+        font-size: 12px;
+    }
+
+    #search {
+        width: 80%;
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    #search {
+        width: 90%;
+        padding: 10px;
+    }
+
+    #results li,
+    #history li {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    #favorites li {
+        width: 60px;
+        height: 60px;
+        font-size: 10px;
+    }
+
+    button {
+        padding: 8px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    #search {
+        width: 95%;
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    #player {
+        height: 250px;
+    }
+
+    #results li,
+    #history li {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    #favorites li {
+        width: 50px;
+        height: 50px;
+        font-size: 9px;
+    }
+
+    button {
+        font-size: 12px;
+        padding: 6px;
+    }
+}
