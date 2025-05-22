@@ -4,51 +4,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My YouTube Music Player</title>
+    <title>Melodify - Your Music Companion</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <h1>My YouTube Music Player</h1>
-    <input type="text" id="search" placeholder="Search...">
-    <ul id="results"></ul>
+    <div class="app-container">
+        <div class="sidebar">
+            <div class="logo">
+                <i class="fas fa-music"></i>
+                <h1>Melodify</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li class="active"><i class="fas fa-home"></i> Home</li>
+                    <li><i class="fas fa-heart"></i> Favorites</li>
+                    <li><i class="fas fa-history"></i> History</li>
+                </ul>
+            </nav>
+            <div class="theme-toggle">
+                <i class="fas fa-moon"></i>
+                <span>Dark Mode</span>
+            </div>
+        </div>
 
-    <h2>Favorites</h2>
-    <ul id="favorites"></ul>
+        <div class="main-content">
+            <div class="search-container">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="search" placeholder="Search for music...">
+                </div>
+            </div>
 
-    <h2>History</h2>
-    <button onclick="clearHistory()">Clear History</button>
-    <ul id="history"></ul>
+            <div class="tab-content active" id="home-tab">
+                <div class="now-playing-section">
+                    <iframe id="player" style="display:none;" width="560" height="315" frameborder="0"
+                        allowfullscreen></iframe>
+                    <div class="player-controls">
+                        <button id="prev-btn"><i class="fas fa-step-backward"></i></button>
+                        <button id="play-btn"><i class="fas fa-play"></i></button>
+                        <button id="next-btn"><i class="fas fa-step-forward"></i></button>
+                    </div>
+                </div>
 
-    <iframe id="player" style="display:none;" width="560" height="315"></iframe>
+                <div class="results-section">
+                    <h2>Search Results</h2>
+                    <ul id="results" class="media-list"></ul>
+                </div>
+            </div>
 
-    <!-- Firebase SDK (Load First) -->
-<!-- Add Firebase SDK -->
-<script src="https://www.gstatic.com/firebasejs/11.3.1/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/11.3.1/firebase-firestore-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/11.3.1/firebase-auth-compat.js"></script>
-    <!-- Firebase Config (Load Second) -->
-    <!-- <script src="firebase.js"></script> -->
-    <script src="script.js">
-        // import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js";
-        //  import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-analytics.js";
-        
-        //  const firebaseConfig = {
-        //         apiKey: "AIzaSyARHh_O4IZinaGViPk6wVnRLNjf2Z5DfBo",
-        //         authDomain: "music-player-57f0a.firebaseapp.com",
-        //         projectId: "music-player-57f0a",
-        //         storageBucket: "music-player-57f0a.firebasestorage.app",
-        //         messagingSenderId: "809108731968",
-        //         appId: "1:809108731968:web:06bbeb26e6228a28d2c7a5",
-        //         measurementId: "G-8VTV7SQJML"
-        //     };
+            <div class="tab-content" id="favorites-tab">
+                <h2>Your Favorites</h2>
+                <div class="favorites-grid" id="favorites"></div>
+            </div>
 
-        //     // Initialize Firebase
-        //     const app = initializeApp(firebaseConfig);
-        //     const analytics = getAnalytics(app);
-    </script>
+            <div class="tab-content" id="history-tab">
+                <div class="history-header">
+                    <h2>Listening History</h2>
+                    <button onclick="clearHistory()" class="clear-btn"><i class="fas fa-trash"></i> Clear</button>
+                </div>
+                <ul id="history" class="media-list"></ul>
+            </div>
+        </div>
+    </div>
 
-    <!-- Main Script (Load Last) -->
+    <script src="script.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
 </body>
 
 </html>
