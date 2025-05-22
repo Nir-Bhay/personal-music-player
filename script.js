@@ -497,42 +497,44 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 // Add default favorites
 function addDefaultFavorites() {
-    let favorites = getFromLocalStorage("favorites");
+    const favorites = getFromLocalStorage("favorites") || [];
 
-    // Only add default favorites if there are no favorites yet
-    if (favorites.length === 0) {
+    if (Array.isArray(favorites) && favorites.length === 0) {
+        const now = new Date().toISOString();
         const defaultSongs = [
             {
-                videoId: "K5KAc5CoCuk",
+                videoId: "ZqBG3PcfUfs", // Working version
                 title: "Tune O Rangeele - Kudrat | Kishore Kumar | R.D. Burman",
-                thumbnail: "https://i.ytimg.com/vi/K5KAc5CoCuk/mqdefault.jpg",
-                dateAdded: new Date().toISOString()
+                thumbnail: "https://i.ytimg.com/vi/ZqBG3PcfUfs/mqdefault.jpg",
+                dateAdded: now
             },
             {
-                videoId: "PBYoqlWjHs4",
+                videoId: "VFKmLkG13tM", // Working version
                 title: "Pal Pal Dil Ke Paas - Blackmail | Kishore Kumar | Kalyanji-Anandji",
-                thumbnail: "https://i.ytimg.com/vi/PBYoqlWjHs4/mqdefault.jpg",
-                dateAdded: new Date().toISOString()
+                thumbnail: "https://i.ytimg.com/vi/VFKmLkG13tM/mqdefault.jpg",
+                dateAdded: now
             },
             {
-                videoId: "HAl7GxONVRQ",
+                videoId: "h_04w0Zml1k", // Working version
                 title: "Kya Yehi Pyar Hai - Rocky | Kishore Kumar | R.D. Burman",
-                thumbnail: "https://i.ytimg.com/vi/HAl7GxONVRQ/mqdefault.jpg",
-                dateAdded: new Date().toISOString()
+                thumbnail: "https://i.ytimg.com/vi/h_04w0Zml1k/mqdefault.jpg",
+                dateAdded: now
             },
             {
-                videoId: "VwrZR7Gvr0Q",
+                videoId: "ExQ0N1HfQxA", // Working version
                 title: "Wahan Kaun Hai Tera Musafir - Guide | Mohammed Rafi | S.D. Burman",
-                thumbnail: "https://i.ytimg.com/vi/VwrZR7Gvr0Q/mqdefault.jpg",
-                dateAdded: new Date().toISOString()
+                thumbnail: "https://i.ytimg.com/vi/ExQ0N1HfQxA/mqdefault.jpg",
+                dateAdded: now
             }
         ];
 
-        // Add all default songs to favorites
         saveToLocalStorage("favorites", defaultSongs);
-        console.log("Added default favorites");
+        console.log("✅ Default favorites added.");
+    } else {
+        console.log("ℹ️ Favorites already exist. Skipping default add.");
     }
 }
+
 // Load Favorites & History and Theme on Page Load
 document.addEventListener("DOMContentLoaded", function () {
     loadTheme();
