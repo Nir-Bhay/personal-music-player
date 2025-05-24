@@ -525,6 +525,12 @@ function addDefaultFavorites() {
                 title: "Wahan Kaun Hai Tera Musafir - Guide | Mohammed Rafi | S.D. Burman",
                 thumbnail: "https://i.ytimg.com/vi/ExQ0N1HfQxA/mqdefault.jpg",
                 dateAdded: now
+            },
+            {
+                videoId: "5FU5j_DvZPg", // Working version
+                title: "Mere Humsafar (Original Score) (Female Version)",
+                thumbnail: "https://i.ytimg.com/vi/5FU5j_DvZPg/mqdefault.jpg",
+                dateAdded: now
             }
         ];
 
